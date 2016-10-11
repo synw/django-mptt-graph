@@ -12,7 +12,7 @@ Urls: `url('^graph/', include('mptt_graph.urls')),`
 
 ## Usage
 
-1. Graph from a tree
+#### Graph from a tree
 
 Go to the admin and make a Graph model object:
 
@@ -22,16 +22,16 @@ In `Root node primary key` put the primary key of the node you wish to start fro
 
 Go to `/graph/`
 
-2. Graph directly from an url
+#### Graph directly from an url
 
 Example: `/graph/myapp.models.MyModel/1/`
 
 First url parameter is the path to the model and second is the model primary key
 
-3. Graph from custom queries
+#### Graph from custom queries
 
 Make a view that sends a `nodes` context variable to `/templates/mptt_graph/tree.html`
 
 ## Screenshot
 
- ![Tree screenshot](https://raw.githubusercontent.com/synw/django-mptt_graph/master/doc/img/screenshot.png)
+ ![Tree screenshot](https://raw.githubusercontent.com/synw/django-mptt-graph/master/doc/img/screenshot.png)
