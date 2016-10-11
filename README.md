@@ -4,9 +4,7 @@ Graphical representation of any mptt model.
 
 ## Install
 
-Clone, make migrations and migrate
-
-Add `"mptt_graph",` to installed apps.
+Clone, add `"mptt_graph",` to installed apps, make migrations and migrate
 
 Urls: `url('^graph/', include('mptt_graph.urls')),`
 
