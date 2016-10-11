@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles i18n %}
+
+{% block title %}{% trans "Model graphs" %}{% endblock title %}
+
+{% block content %}
+<h1 style="margin-bottom:1em">{% trans "Model graphs" %}</h1>
+{% for graph in graphs %}
+	<div style="display:inline;padding:1em;margin:1em;border:1px solid grey;border-radius:5px">
+		<a href="{% url 'mpttgraph-detail' graph.model_path graph.model_pk %}">{{ graph.title }}</a>
+	</div>
+{% endfor %}
+{% endblock content %}

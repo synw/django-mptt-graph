@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles mptt_tags %}
+
+{% block title %}Model graph{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" media="screen, projection" href="{% static 'mptt_graph/tree.css' %}" />
+<div class="row">
+	<div class="col-xs-12">
+		<div class="tree">
+			<ul>
+			{% recursetree nodes %}
+		        <li>
+		            <a href="{{ node.title }}" id="{{ id }}">
+		            	{{ node.url }}
+		            	<div id="displayzone_{{ id }}" class="displayzone"></div>
+		            </a>
+		            {% if not node.is_leaf_node %}
+		                <ul>
+		                    {{ children }}
+		                </ul>
+		            {% endif %}
+		        </li>
+		    {% endrecursetree %}
+		    </ul>
+	    </div>
+	</div>
+</div>
+{% endblock content %}
