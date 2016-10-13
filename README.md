@@ -24,7 +24,7 @@ Go to `/graph/`
 
 Example: `/graph/myapp.models.MyModel/1/`
 
-First url parameter is the path to the model and second is the model primary key
+First url parameter is the path to the model and second is the root node primary key
 
 #### Graph from custom queries
 
