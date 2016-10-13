@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from mptt.models import TreeForeignKey, MPTTModel
 
 
 class GraphModel(models.Model):
@@ -12,6 +13,19 @@ class GraphModel(models.Model):
     class Meta:
         verbose_name=_(u'Mptt graph')
         verbose_name_plural = _(u'Mptt graphs')
+        ordering = ('title',)
+
+    def __unicode__(self):
+        return unicode(self.title)
+    
+
+class TreeNode(MPTTModel):
+    title = models.CharField(max_length=200, verbose_name=_(u"Title"))
+    parent = TreeForeignKey('self', null=True, blank=True, related_name=u'children', verbose_name=_(u'Parent category'))
+    
+    class Meta:
+        verbose_name=_(u'Tree node')
+        verbose_name_plural = _(u'Tree nodes')
         ordering = ('title',)
 
     def __unicode__(self):

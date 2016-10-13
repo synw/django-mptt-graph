@@ -72,7 +72,7 @@ right connector from last child*/
 	height: 20px;
 }
 
-.tree li a{
+.tree li a {
 	border: 1px solid lightgrey;
 	padding: 5px 10px;
 	text-decoration: none;
