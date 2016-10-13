@@ -21,7 +21,7 @@ class GraphModel(models.Model):
 
 class TreeNode(MPTTModel):
     title = models.CharField(max_length=200, verbose_name=_(u"Title"))
-    parent = TreeForeignKey('self', null=True, blank=True, related_name=u'children', verbose_name=_(u'Parent category'))
+    parent = TreeForeignKey('self', null=True, blank=True, related_name=u'children', verbose_name=_(u'Parent node'))
     
     class Meta:
         verbose_name=_(u'Tree node')
