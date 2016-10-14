@@ -28,7 +28,8 @@ First url parameter is the path to the model and second is the root node primary
 
 #### Graph from custom queries
 
-Make a view that sends a `nodes` context variable to `/templates/mptt_graph/tree.html`
+Make a view that sends a `nodes` context variable to `/templates/mptt_graph/tree.html` or use the inline template:
+``{% include "mptt_graph/tree_inline.html" %}``
 
 ## Screenshot
 
