@@ -18,7 +18,7 @@ class ModelListGraphsView(TemplateView):
         context = super(ModelListGraphsView, self).get_context_data(**kwargs)
         context['graphs'] = GraphModel.objects.all()
         return context
-    
+
 
 class ModelGraphView(TemplateView):
     template_name = 'mptt_graph/tree.html'
@@ -36,3 +36,7 @@ class ModelGraphView(TemplateView):
         nodes = root_node.get_descendants(include_self=True)
         context['nodes'] = nodes
         return context
+
+
+class ModelGraphInlineView(ModelGraphView):
+    template_name = 'mptt_graph/tree_inline.html'
