@@ -7,22 +7,26 @@
 <link rel="stylesheet" media="screen, projection" href="{% static 'mptt_graph/tree.css' %}" />
 <div class="row">
 	<div class="col-xs-12">
-		<div class="tree">
-			<ul>
-			{% recursetree nodes %}
-		        <li>
-		        	<a href="{% if node.url %}{{ node.url }}{% endif %}" id="{{ id }}">
-		            	{{ node.title }}
-		            	<div id="displayzone_{{ id }}" class="displayzone"></div>
-		            </a>
-		            {% if not node.is_leaf_node %}
-		                <ul>
-		                    {{ children }}
-		                </ul>
-		            {% endif %}
-		        </li>
-		    {% endrecursetree %}
-		    </ul>
+		<div class="text-center" style="width:100%;font-size:65%">
+			<div class="text-left" style="display:inline-block">
+				<div class="tree">
+					<ul>
+					{% recursetree nodes %}
+				        <li>
+				        	<a href="{% if node.url %}{{ node.url }}{% else %}{{ node.get_absolute_url }}{% endif %}" id="{{ id }}">
+				            	{{ node.title }}{{ node.name }}
+				            	<div id="displayzone_{{ id }}" class="displayzone"></div>
+				            </a>
+				            {% if not node.is_leaf_node %}
+				                <ul>
+				                    {{ children }}
+				                </ul>
+				            {% endif %}
+				        </li>
+				    {% endrecursetree %}
+				    </ul>
+			    </div>
+			</div>
 	    </div>
 	</div>
 </div>

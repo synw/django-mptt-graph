@@ -6,8 +6,8 @@
 			<ul>
 			{% recursetree nodes %}
 		        <li>
-		        	<a href="{{ node.url }}" id="{{ id }}">
-		            	{{ node.title }}
+		        	<a href="{% if node.url %}{{ node.url }}{% else %}{{ node.get_absolute_url }}{% endif %}" id="{{ id }}">
+		            	{{ node.title }}{{ node.name }}
 		            	<div id="displayzone_{{ id }}" class="displayzone"></div>
 		            </a>
 		            {% if not node.is_leaf_node %}
