@@ -4,7 +4,11 @@ Graphical representation of any mptt model.
 
 ## Install
 
-Clone, add `"mptt_graph",` to installed apps, make migrations and migrate
+   ```
+   pip install django-mptt-graph
+   ```
+
+Add `"mptt_graph",` to installed apps, make migrations and migrate
 
 Urls: `url('^graph/', include('mptt_graph.urls')),`
 
